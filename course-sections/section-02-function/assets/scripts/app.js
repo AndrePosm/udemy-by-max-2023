@@ -17,7 +17,7 @@ function createAndWriteOutput (operator, resultBeforeCalc,calcNumber){
 function add (num1, num2) {
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
-    currentResult = currentResult + enteredNumber;
+    currentResult += enteredNumber;
     createAndWriteOutput ('+', initialResult, enteredNumber);
 }
 
