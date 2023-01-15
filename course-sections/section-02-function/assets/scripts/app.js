@@ -1,5 +1,12 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
+let logEntries = [];
+
+
+
+// also works 
+// let logEntries = [1, 2, 3];
+
 
 //Just one more comment!
 
@@ -19,6 +26,8 @@ function add (num1, num2) {
     const initialResult = currentResult;
     currentResult += enteredNumber;
     createAndWriteOutput ('+', initialResult, enteredNumber);
+    logEntries.push(enteredNumber);
+    console.log(logEntries[0]);
 }
 
 function subtract () {
