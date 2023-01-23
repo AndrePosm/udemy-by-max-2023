@@ -1,4 +1,5 @@
 const ATTACK_VALUE = 10;
+const STRONG_ATTACK_VALUE = 17;
 const MONSTER_ATTACK_VALUE = 14;
 
 let chosenAndreLife = 100;
@@ -7,20 +8,35 @@ let currentPlayerHealth = chosenAndreLife;
 
 adjustHealthBars (chosenAndreLife);
 
-function attackHandler() {
-  const damage = dealMonsterDamage (ATTACK_VALUE);
+function attackMonster (mode) {
+  let andreDamage;
+  if (mode === 'ATTACK') {
+    andreDamage = ATTACK_VALUE;
+  } else {
+    andreDamage = STRONG_ATTACK_VALUE;
+  }
+  const damage = dealMonsterDamage(andreDamage);
   currentMonsterHealth -= damage;
 
-  const playerDamage = dealPlayerDamage (MONSTER_ATTACK_VALUE);
+  const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
   currentPlayerHealth -= playerDamage;
 
   if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
-    alert ('You won!');
+    alert("You won!");
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
-    alert ('You lost ! :( ... Poveze nastupnogo razu =)');
-  } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0){
-    alert ('You have a draw');
+    alert("You lost ! :( ... Poveze nastupnogo razu =)");
+  } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
+    alert("You have a draw");
   }
 }
 
-attackBtn.addEventListener('click', attackHandler);
+function attackHandler() {
+  attackMonster ('ATTACK');
+}
+
+function strongAttackHandler () {
+  attackMonster ('STRONG_ATTACK');
+}
+
+attackBtn.addEventListener ('click', attackHandler);
+strongAttackBtn.addEventListener("click", strongAttackHandler);
