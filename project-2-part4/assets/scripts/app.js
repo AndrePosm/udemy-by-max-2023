@@ -11,6 +11,12 @@ let hasBonusLife = true;
 
 adjustHealthBars (chosenAndreLife);
 
+function reset() {
+  currentMonsterHealth = chosenAndreLife;
+  currentPlayerHealth = chosenAndreLife;
+  resetGame(chosenAndreLife);
+}
+
 function endRound () {
   const initialPlayerHealth = currentPlayerHealth;
   const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
@@ -25,11 +31,17 @@ function endRound () {
   }
 
   if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
-    alert("You won!");
-  } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
-    alert("You lost ! :( ... Poveze nastupnogo razu =)");
-  } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
-    alert("You have a draw"); 
+      alert("You won!");
+    } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
+      alert("You lost ! :( ... Poveze nastupnogo razu =)");
+    } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
+      alert("You have a draw");
+    }
+
+    if (
+      currentMonsterHealth <= 0 || currentPlayerHealth <= 0
+    ) {
+    reset();
   }
 }
 
