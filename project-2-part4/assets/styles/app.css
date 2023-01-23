@@ -28,7 +28,7 @@ progress[value] {
 }
 
 progress[value]::-webkit-progress-value {
-  background-color: #a927f5;
+  background-color: #06ccf4;
   transition: all 0.2s ease-out;
 }
 
@@ -43,8 +43,8 @@ button {
   border: 1px solid #ff0062;
   color: white;
   padding: 1rem 2rem;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 10px;
+  curso: pointer;
   margin: 0.5rem;
 }
 
@@ -77,8 +77,8 @@ button:active {
 #bonus-life {
   font-weight: bold;
   color: white;
-  background: #ff0062;
-  border: 1px solid #ff0062;
+  background: #b1b1b1;
+  border: 1px solid #bc9e72;
   padding: 0.15rem 0.5rem;
   border-radius: 10px;
   text-align: center;
