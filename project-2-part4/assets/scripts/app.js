@@ -224,22 +224,27 @@ function healPlayerHandler () {
 }
 
 function printLogHandler () {
-  for (let i = 0; i < 3; i++) {
-    console.log("---------");
-  }
-  /*
-  for (let i = 10; i > 0;) {
-    i--;
-    console.log(i);
-  }
+ for (let i = 0; i < 3; i++) {
+   console.log("---------");
+ }
+  let j = 0;
+  do {
+    console.log (j);
+    j++;
+} while (j < 3);
+
+ // for (let i = 10; i > 0;) {
+ //   i--;
+ //   console.log(i);
+ // }
   
-  for (let i = 0; i < battleLog.length; i++) {
-    console.log(battleLog[i]);
-  }
-  */
+//  for (let i = 0; i < battleLog.length; i++) {
+//    console.log(battleLog[i]);
+//  }
+
   let i = 0;
   for (const logEntry of battleLog) {
-    console.log (`#${i}`);
+    console.log(`#${i}`);
     for (const key in logEntry) {
       console.log(`${key} => ${logEntry[key]}`);
     }
